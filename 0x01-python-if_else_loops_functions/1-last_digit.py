@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 import random
 
-number = random.randint(-10000, 10000) # Assign random no btw -10000 & 10000 #
+number = random.randint(-10000, 10000)  # Assign random no btw -10000 & 10000 #
 lastDigit = 0
 
 if number >= 0:
