@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+def print_hexa():
+    for i in range(99 + 1):
+        print("{} = {}".format(i, hex(i)))
 
-for num in range(99):
-    print("{:d} = {:s}".format(num, hex(num)))  #prints ASCII value for loop#
