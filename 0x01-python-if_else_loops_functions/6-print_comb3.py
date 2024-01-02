@@ -8,6 +8,5 @@ for i in range(100):
         # Check if it's not the number 89 to avoid adding a comma
         if (i != 89):
             print(", ", end="")
-
 # Print a new line after all pairs are printed
 print("")            
