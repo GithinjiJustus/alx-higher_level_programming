@@ -8,4 +8,3 @@ for char in range(26):
         # Add the ASCII value of 'a' to the current value of 'char'#
         # Print the character without a newline (end="")#
         print("{:s}".format(chr(char + ord("a"))), end="")
-
