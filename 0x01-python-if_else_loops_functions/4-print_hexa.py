@@ -1,4 +1,6 @@
 #!/usr/bin/python3
-def print_hexa():
-    for i in range(99 + 1):
-        print("{} = {}".format(i, hex(i)))
+
+# Loop through numbers from 0 to 99 (inclusive)
+for num in range(99 + 1):
+    # Print the number in decimal and hexadecimal format
+    print(f"{num} = 0x{num:x}")
