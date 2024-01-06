@@ -1,18 +1,11 @@
 #!/usr/bin/python3
 def print_matrix_integer(matrix=[[]]):
+    #  Iterate through each row in the matrix
     for row in matrix:
-        for elem in row:
-            print("{:d}".format(elem), end=" ")
-            print()
-
-# Test the function
-if __name__ == "__main__":
-    matrix = [
-            [1, 2, 3],
-            [4, 5, 6],
-            [7, 8, 9]
-            ]
-
-    print_matrix_integer(matrix)
-    print("--")
-    print_matrix_integer()
+        #  Iterate through each column in the row
+        for col in row:
+            #  Print the integer with formatting
+            print("{:d}".format(col), end=" " if col != row[-1] else "")
+            #  Print a space after the integer if it's not last element in row
+            #  Move to the next line after printing all columns in the row
+            print ()
