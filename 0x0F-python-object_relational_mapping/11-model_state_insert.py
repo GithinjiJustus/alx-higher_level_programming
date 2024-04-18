@@ -11,6 +11,7 @@ if __name__ == "__main__":
     # Create engine to connect to the database
     engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'
                            .format(sys.argv[1], sys.argv[2], sys.argv[3]))
+    Base.metadata.create_all(engine)
 
     # Create session class
     Session = sessionmaker(bind=engine)
@@ -25,10 +26,10 @@ if __name__ == "__main__":
     session.add(new_state)
 
     # Commit the session to the database
-    session.commit()
+    new_instance = session.query(State).filter_by(name='Louisiana').first()
 
     # Print the id of the newly added State object
     print(new_state.id)
 
     # Close session
-    session.close()
+    session.commit()
