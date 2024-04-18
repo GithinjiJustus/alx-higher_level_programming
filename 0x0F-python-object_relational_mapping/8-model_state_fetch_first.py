@@ -11,19 +11,15 @@ if __name__ == "__main__":
     # Create engine to connect to the database
     engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'
                            .format(sys.argv[1], sys.argv[2], sys.argv[3]))
+    Base.metadata.create_all(engine)
 
     # Create session class
     Session = sessionmaker(bind=engine)
 
     # Create session
     session = Session()
-
-    # Query and print the first instance of State
-    first_state = session.query(State).first()
-    if first_state:
-        print("{}: {}".format(first_state.id, first_state.name))
-    else:
+    instance = session.query(State).first()
+    if instance is None:
         print("Nothing")
-    
-    # Close session
-    session.close()
+    else:
+        print(instance.id, instance.name, sep=": ")
